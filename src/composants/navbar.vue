@@ -19,7 +19,7 @@ export default {
 
 <style>
 .bg-ligth{
-  background-color: rgb(243, 243, 243);
+  background-color: rgb(255, 255, 255);
   
 }
 </style>

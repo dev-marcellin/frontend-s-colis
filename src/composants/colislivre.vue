@@ -37,7 +37,13 @@ export default {
   },
   mounted(){
     this.colislivre= 55;
-  }
+
+    
+      axios.get("http://localhost:5000/jwtid")
+      .then(response => console.log(response) )
+      console.log("test du monted");
+    }
+  
 }
 </script>
 

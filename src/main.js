@@ -13,8 +13,11 @@ import gerantbranche from './composants/gerantbranche.vue'
 import enregistrercolis from './composants/enregistrercolis.vue'
 import facture from './composants/facture.vue'
 import historique from './composants/historique'
+import historiqueagence from './composants/historiqueagence'
 
+import Vuex from 'vuex'
 
+Vue.use(Vuex)
 Vue.use(vueRouter)
 
 const router = new vueRouter({
@@ -56,6 +59,14 @@ component: facture
   path: '/branche/historique',
 component: historique
 },
+{
+  path: '/agence/historique',
+component: historiqueagence
+},
+
+
+
+
 
         
 
@@ -65,5 +76,5 @@ component: historique
 new Vue({
   el: '#app',
   router,
-  render: h => h(App) 
+  render: h => h(App)
 })

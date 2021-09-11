@@ -1,19 +1,19 @@
 <template>
   <div class="container-fluid h-100">
     <div class="row h-100 ">
-       <bordlateral data="Gérer Branche" creer="Créer Branche" admin="Gerant Agence" r1="/gerant/creerbranche" r2="/gerant/gererbranche"></bordlateral>
+       <bordlateral data="Gérer Branche" creer="Créer Branche" admin="Gerant Agence" r1="/gerant/creerbranche" r2="/gerant/gererbranche" historique="/agence/historique"></bordlateral>
       <main class="col">
         <navbar></navbar>
-        <div class="bord">
-          <h2>créer une branche </h2>
-        </div>
-            
+       
+            <br>
         <div class="row row-cols-1 row-cols-md-3 g-4">
           <br />
-          <form >
-            
+          <form class="enrg">
+             <div class="bord text-center">
+          <h2>créer une branche </h2>
+        </div>
             <div class="partieutilisateur"><h7>informations sur l'utilisateur </h7></div>
-            <div class=" row row-cols-1 row-cols-md-1 g-4">
+            <div class=" row row-cols-1 row-cols-md-2 g-4 ">
 
             <div class="mb-3 ">
               
@@ -55,9 +55,12 @@
                 class="form-control" v-model="password"
               />
             </div>
-            <div class="partieAgence bg-success"><h7>informations sur la branche </h7></div><br>
+            <div class="infos"> <h7>informations sur la branche </h7></div><br></div>
+            <div class="branche">
+
+         
             
-            </div>
+          
               <div class="mb-3">
               
               nom de la branche<input
@@ -74,18 +77,13 @@
              
             </div>
                 
-            <p class="bg-warning"> r1{{test}}</p>
+          
             <input type="button"  class="btn btn-primary" @click="enregistrer" value="enregistrer">
+            </div>
           
           </form>
 
-          <gain></gain>
-
-          <evolutiongain></evolutiongain>
-
-          <test></test>
-
-          <alert></alert>
+          
         </div>
       </main>
     </div>
@@ -103,14 +101,14 @@ export default {
   data() {
     return {
       s: 1000000,
-      nom,
-      prenom,
-      login,
-      email,
+      nom:'',
+      prenom:'',
+      login:'',
+      email:'',
       
-      password,
-      noma,
-      siege,
+      password:'',
+      noma:'',
+      siege:'',
       
       
 
@@ -131,3 +129,30 @@ export default {
   }
 };
 </script>
+
+<style>
+.enrg{
+  width: 50%;
+  background-color: rgb(235, 241, 235);
+  
+    margin: auto;
+  width: 80%;
+  height: 600px;
+  border: 3px solid rgb(212, 219, 212);
+  padding: 10px;
+}
+
+.infos {
+   margin: auto;
+  width: 50%;
+  font-size: larger;
+}
+.branche{
+  
+}
+.partieutilisateur{
+   margin: auto;
+  width: 50%;
+  font-size: larger;
+}
+</style>

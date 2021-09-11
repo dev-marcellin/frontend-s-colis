@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid h-100">
     <div class="row h-100 ">
-      <bordlateral  creer="Enregistrer un colis" data="envoi" admin="Gérant de branche" branche1="reception" r1="/branche/enregistrer" r2="/branche/envoi" historique="/branche/historique"></bordlateral>
+     <bordlateral data="Gérer Branche" creer="Créer Branche" admin="Gerant Agence" r1="/gerant/creerbranche" r2="/gerant/gererbranche" historique="/agence/historique"></bordlateral>
       <main class="col">
         <navbar></navbar>
         <div class="bord">
@@ -21,23 +21,21 @@
           <table class="table table-success table-striped">
   <thead>
     <tr>
-      <th scope="col">N°</th>
-      <th scope="col">Code</th>
-      <th scope="col">Description</th>
-      <th scope="col">Prix</th>
-      <th scope="col">Depart</th>
-        <th scope="col">Destination</th>
+        <th scope="col">N° </th>
+      <th scope="col">Nom Branche</th>
+      <th scope="col">Nombre de colis </th>
+      <th scope="col">Montant </th>
+      
     </tr>
   </thead>
   <tbody>
     <tr scope="row" v-for="(element,index) in tableau" :key="index"> 
       <!-- scope="row" v-for="element in tableau" :key="element.code">{{element.code}} -->
        <th > {{index}}</th>
-      <td> {{element.code}}</td>
-      <th>{{element.description}}</th>
-      <th>{{element.prix}}</th>
-      <th>{{element.depart}}</th>
-      <th>{{element.destination}}</th>
+      <td> {{element.nom}}</td>
+      <td> {{element.nombre}}</td>
+      <th>{{element.som}}</th>
+     
 
     </tr>
    
@@ -88,7 +86,7 @@ export default {
     console.log(context.tableau);
 
     for(let i=0; i<context.tableau.length; i++){
-        tempo+=context.tableau[i].prix ;
+       tempo+= context.tableau[i].som;
 
       }
       context.total= tempo ;
@@ -98,23 +96,22 @@ export default {
     }
   },
   mounted(){
-  let tempo = 0;
+ 
   let context = this ;
+  let tempo=0;
+ 
   //611bc8be609fe50e2eedbae3
-    axios.get("http://localhost:5000/api/infos/branche/historique/611bc8be609fe50e2eedbae3")
-    .then(response => { 
+    axios.get("http://localhost:5000/api/infos/agence/historique/6112eed4ff8af9169c99587f")
+    .then(response => {console.log(response.data)
       
-      context.tableau = response.data;
+     context.tableau = response.data;
 
-      console.log(context.tableau);
-  
-    for(let i=0; i<context.tableau.length; i++){
-        tempo+=context.tableau[i].prix ;
+   for(let i=0; i<context.tableau.length; i++){
+       tempo+= context.tableau[i].som;
 
       }
       context.total= tempo ;
-      
-        console.log(context.total);
+    
     })
 
   }

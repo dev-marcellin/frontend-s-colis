@@ -1,12 +1,12 @@
 <template>
   
-    <aside class="col-12 col-md-2 p-0 bg-primary"  >
-      <nav class="navbar navbar-expand navbar-dark  flex-md-column flex-row align-items-start " id="dash">
+    <aside class="col-12 col-md-2 p-0 bg-dark"  >
+      <nav class="navbar navbar-expand   flex-md-column flex-row align-items-start " id="dash">
           <div class="collapse navbar-collapse">
               <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
                   <li class="nav-item">
-                      <h3 class="bordtext" >{{admin}} </h3><hr>
-                     <h3 class="bordtext"><img src="../img/bord.png" class="size"> Tableau de Bord</h3><br> <hr>
+                      <h5 class="bordtext" >{{admin}} </h5><hr>
+                     <h5 class="bordtext"><img src="../img/bord.png" class="size"> Tableau de Bord</h5><br> <hr>
                   </li>
                   
                   <li class="bordtext"> <img src="../img/dash.png" class="size"> <router-link :to="r1"> {{creer}} </router-link></li> <br>
@@ -20,7 +20,7 @@
                   <br>
                   <li class="bordtext"></li> <hr>
                   <br><br>
-                  <li class="bordtext"><img src="../img/tableau.png" class="size"> <router-link :to="histo"> Historique </router-link> </li> <br>
+                  <li class="bordtext"><img src="../img/tableau.png" class="size"> <router-link :to="historique"> Historique </router-link> </li> <br>
                   <li class="bordtext"> <img src="../img/chart.png" class="size"> Statistique</li>
 
                   <br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -64,11 +64,11 @@ export default {
   },
   
   mounted(){
-    this.route1 = this.r1 ;
+   /* this.route1 = this.r1 ;
     this.route2 = this.r2 ;
     this.histo = this.historique;
     this.route3 = this.branche1;
-    this.test= "test";
+    this.test= "test";*/
   
   },
   methods:{
@@ -83,6 +83,11 @@ export default {
 
 <style>
 
+.bordtext{
+  text-decoration: none;
+ color: white;
+ 
+}
 .bordtext a{
  text-decoration: none;
  color: white;
@@ -91,6 +96,13 @@ export default {
   width: 20px;
   height: 20px;
 }
+hr{
+    color: #ffffff;
+    width: 300px;
+    height: 300px;
+    
+}
+
 
 
 </style>

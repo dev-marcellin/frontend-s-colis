@@ -19,7 +19,7 @@ background-color: azure;
 }
 hr{
     color: #ffffff;
-    width: 200px;
+    width: 150px;
     height: 200px;
     
 }
@@ -30,10 +30,10 @@ hr{
     color: white;
 }
 
-#dash{
+.navbar{
     height: max-content;
     width: 100%;
-    background-color: blue;
+    background-color: rgb(35, 35, 39);
 }
 .size{
     height: 30px;
@@ -44,4 +44,32 @@ hr{
     color: white;
     font-size: large;
     text-decoration: none;
+}
+/*formulaire de connexion*/
+
+.form-con{
+    background-image: url("../img/colis.png");
+   
+  margin: auto;
+  width: 50%;
+  height: 500px;
+  border: 3px solid rgb(212, 219, 212);
+  padding: 10px;
+
+}
+.form-con form{
+    margin: auto;
+  width: 50%;
+  /*border: 3px solid green;*/
+  padding: 10px;
+  font-size: xx-large;
+}
+.back{
+background-image: url("../img/colis.png");
+
+
+}
+
+#app{
+ background-color: rgb(143, 136, 150);
 }

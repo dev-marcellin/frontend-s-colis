@@ -2,7 +2,7 @@
     <div class="container-fluid h-100" >
             <div class="row h-100">
 
-                <bordlateral  creer="Enregistrer un colis" data="envoi" admin="Gérant de branche" branche1="reception" r1="/branche/enregistrer" r2="/branche/envoi"></bordlateral>
+                <bordlateral  creer="Enregistrer un colis" data="envoi" admin="Gérant de branche" branche1="reception" r1="/branche/enregistrer" r2="/branche/envoi" historique="/branche/historique"></bordlateral>
               <main class="col">
                 
                 <navbar></navbar>
@@ -57,6 +57,15 @@ export default {
       msg1: true,
       branche: true,
     } 
+  },
+  props: {
+    id: String
   }
 }
 </script>
+
+<style>
+main{
+  background-color:lightgray;
+}
+</style>

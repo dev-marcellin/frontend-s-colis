@@ -4,16 +4,17 @@
       <bordlateral data="Gérer Agence" creer="Créer Agence" admin="Admin" r1="/admin/creeragence" r2="/admin/gereragence" historique="/admin/historique"></bordlateral>
       <main class="col">
         <navbar></navbar>
-        <div class="bord">
-          <h2>créer une Agence</h2>
-        </div>
+       <br>
 
         <div class="row row-cols-1 row-cols-md-3 g-4">
           <br />
-          <form >
-            
+          <form  class="creeragence">
+             <div class="bord text-center ">
+          <h2>créer une Agence</h2>
+        </div>
+
             <div class="partieutilisateur"><h7>informations sur l'utilisateur </h7></div>
-            <div class=" row row-cols-1 row-cols-md-1 g-4">
+            <div class=" row row-cols-1 row-cols-md-2 g-4 ">
 
             <div class="mb-3 ">
               
@@ -46,10 +47,10 @@
             </div>
             <div class="mb-3">
               
-              role<input
-                type="text"
-                class="form-control" v-model="role"
-              />
+            role
+      <select id="disabledSelect" class="form-select">
+        <option>gerant branche</option>
+      </select>
             </div>
             <div class="mb-3">
               
@@ -58,7 +59,7 @@
                 class="form-control" v-model="password"
               />
             </div>
-            <div class="partieAgence bg-success"><h7>informations sur l'agence </h7></div><br>
+            <div class="partieAgence"><h7>informations sur l'agence </h7></div><br>
             
             </div>
               <div class="mb-3">
@@ -104,14 +105,14 @@ export default {
   data() {
     return {
       c: "Welcome to Your bord lateral",
-      nom,
-      prenom,
-      login,
-      email,
-      role,
-      password,
-      noma,
-      siege,
+      nom: '',
+      prenom:'',
+      login:'',
+      email:'',
+      role:'',
+      password:'',
+      noma:'',
+      siege:'',
       
 
     };
@@ -128,3 +129,13 @@ export default {
   }
 };
 </script>
+
+<style>
+.creeragence{
+    margin: auto;
+  width: 80%;
+  height: 650px;
+  border: 3px solid rgb(212, 219, 212);
+  padding: 10px;
+}
+</style>

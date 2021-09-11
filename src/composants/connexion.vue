@@ -1,17 +1,18 @@
 <template>
   <div class="container-fluid h-100">
-    <div class="row h-100">
+    <div class="row h-100 back">
      
       <main class="col">
-        <navbar></navbar>
-        <div class="bord">
-          <h2>Connectez vous à votre compte</h2>
+      
+        <div class="bienvenu">
+          <h2></h2>
         </div>
 
-        <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="row row-cols-1 row-cols-md-3 g-4 form-con">
           <br />
+           
           <form >
-            
+             <h4>Connectez vous à votre compte</h4>
             <div class=" row row-cols-1 row-cols-md-1 g-4">
 
             <div class="mb-3 ">
@@ -19,6 +20,7 @@
               login:<input
                 type="text"
                 class="form-control" v-model="login"
+                placeholder="votre login"
               />
               
             </div>
@@ -27,6 +29,7 @@
               mot de passe:<input
                 type="password"
                 class="form-control" v-model="password"
+                placeholder="votre mot de passe"
               />
             </div>
             
@@ -39,7 +42,7 @@
            
 
             
-            <input type="button"  class="btn btn-primary" @click="enregistrer" value="enregistrer">
+            <input type="button"  class="btn btn-primary" @click="enregistrer" value="connexion">
            
           </form>
 
@@ -57,19 +60,19 @@
 </template>
 
 <script>
-import bordlateral from "./bordlateral.vue";
-import navbar from "./navbar.vue";
+
 
 export default {
   name: "app",
   
-  components: { navbar },
+ 
   data() {
     return {
       c: "Welcome to Your bord lateral",
-      login,
-      password,
-      role
+      login:'',
+      password:'',
+      role:'',
+      id:''
       
       
 
@@ -82,11 +85,13 @@ export default {
   axios.post("http://localhost:5000/api/user/login", login)
     .then(response => {console.log(response);
       this.role= response.data.status;
+      this.id= response.data.user;
 
     this.$emit("submit", {
         login: this.login,
         pwd: this.password,
-        role: this.role
+        role: this.role,
+        id:  this.id
       });
 
     })
@@ -94,3 +99,7 @@ export default {
   }
 };
 </script>
+
+<style>
+
+</style>

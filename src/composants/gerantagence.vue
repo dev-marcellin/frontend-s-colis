@@ -2,7 +2,7 @@
     <div class="container-fluid h-100" >
             <div class="row h-100">
 
-                <bordlateral data="Gérer Branche" creer="Créer Branche" admin="Gerant Agence" r1="/gerant/creerbranche" r2="/gerant/gererbranche"></bordlateral>
+                <bordlateral data="Gérer Branche" creer="Créer Branche" admin="Gerant Agence" r1="/gerant/creerbranche" r2="/gerant/gererbranche" historique="/agence/historique"></bordlateral>
               <main class="col">
                 
                 <navbar></navbar>
@@ -47,6 +47,7 @@ import gain from './gain.vue'
 import evolutiongain from './evolutiongain.vue'
 import test from './test.vue'
 import alert from './alert.vue'
+
 
 export default {
   components: {bordlateral, navbar, colislivre, colisarrive, gain, evolutiongain, test, alert},
